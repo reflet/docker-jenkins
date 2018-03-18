@@ -26,7 +26,7 @@ $ docker run exec -it jenkins bash
 ### 操作画面
 Vagrant(192.168.33.10)を使っている場合の例です。
 
-hssp://192.168.33.10:8080
+* http://192.168.33.10:8080
 
 ### docker-composeの記述例
 
@@ -43,7 +43,6 @@ services:
       - '50000:50000'
     volumes:
       - jenkins-data:/var/jenkins_home
-
 volumes:
   jenkins-data:
     driver: local
