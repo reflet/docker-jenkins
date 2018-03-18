@@ -33,17 +33,18 @@ Vagrant(192.168.33.10)を使っている場合の例です。
 ```
 version: '2'
 services:
-  jenkins:
-    restart: always
-    image: reflet/docker-jenkins
-    container_name: 'jenkins'
-    working_dir: '/root/opt'
-    ports:
-      - '8080:8080'
-      - '50000:50000'
-    volumes:
-      - jenkins-data:/var/jenkins_home
-volumes:
-  jenkins-data:
-    driver: local
+    jenkins:
+        restart: always
+        image: reflet/docker-jenkins
+        container_name: 'jenkins'
+        working_dir: '/root/opt'
+        ports:
+            - '8080:8080'
+            - '50000:50000'
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - jenkins-data:/var/jenkins_home
+  volumes:
+      jenkins-data:
+          driver: local
 ```
