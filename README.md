@@ -44,7 +44,7 @@ services:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
             - jenkins-data:/var/jenkins_home
-  volumes:
-      jenkins-data:
-          driver: local
+    volumes:
+        jenkins-data:
+            driver: local
 ```
